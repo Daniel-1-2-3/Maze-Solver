@@ -11,9 +11,9 @@ class Solver:
         
         self.inputName = inputName
         outputName = inputName[0:inputName.find('.')] + "_Solved" + ".jpg"
-        self.inputDir = 'C:\\Daniel\\Python\\Maze Solver\\' + inputName
-        self.outputDir = 'C:\\Daniel\\Python\\Maze Solver\\' + outputName
-        self.processDir = f'C:\\Daniel\\Python\\Maze Solver\\Processing\\SolvingStep'#for storing series of photos that explain how the algorithm works
+        self.inputDir = inputName
+        self.outputDir = outputName
+        self.processDir = f'Processing\\SolvingStep'#for storing series of photos that explain how the algorithm works
         self.maze = cv2.imread(self.inputDir)
         
     #processing speed depends on dimensions of image (total number of pixels) and width of maze corridor (in pixels)

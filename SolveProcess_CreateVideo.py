@@ -4,19 +4,19 @@ import os
 class VideoCreator():
     def __init__(self, mazeName):
         #1 picture = 1 frame
-        self.framesList = [img for img in os.listdir('C:\Daniel\Python\Maze Solver\Processing')]
+        self.framesList = [img for img in os.listdir('Processing')]
         self.framesList = self.bubbleSort_frames(self.framesList)
         #create a VideoWriter object to save the frames (out)
         self.fourcc = cv2.VideoWriter_fourcc(*'h264')#ASCII codec for compressing and decompressing the video (encoding it to compress file size)
         self.fps = 10
-        frame = cv2.imread('C:\\Daniel\\Python\\Maze Solver\\Processing\\'+ str(self.framesList[0]))
+        frame = cv2.imread('Processing\\'+ str(self.framesList[0]))
         self.height, self.width, _ = frame.shape
-        self.outputPath = 'C:\\Daniel\\Python\\Maze Solver\\Processing Video\\' + mazeName + ".mp4"
+        self.outputPath = 'Processing Video\\' + mazeName + ".mp4"
         self.out = cv2.VideoWriter(self.outputPath, self.fourcc, self.fps, (self.width, self.height)) #output
 
     def to_animation(self):
         for frame in self.framesList:
-            self.out.write(cv2.imread('C:\\Daniel\\Python\\Maze Solver\\Processing\\'+ frame))
+            self.out.write(cv2.imread('Processing\\'+ frame))
         cv2.destroyAllWindows()
         self.out.release()
         print("Finished")

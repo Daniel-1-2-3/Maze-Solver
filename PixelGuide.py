@@ -1,3 +1,4 @@
+# run this file first on the maze image
 import cv2
 import numpy as np
 
@@ -35,7 +36,7 @@ def draw_pixel_guide(img):
     cv2.imshow("Pixel Guide", img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    cv2.imwrite('C:\\Daniel\\Python\\Maze Solver\\PixelGuide.jpg', img)
+    cv2.imwrite('PixelGuide.jpg', img)
                     
 inputName = input("Enter maze name: ")
 inputDir = 'C:\\Daniel\\Python\\Maze Solver\\' + inputName + ".jpg"
